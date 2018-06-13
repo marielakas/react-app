@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "React application template",
   "keywords": [
-    "React", "Redux", "Redux-saga"
+    "React",
+    "Redux",
+    "Redux-saga"
   ],
   "main": "index.js",
   "scripts": {
+    "build:dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build:prod": "cross-env NODE_ENV=production webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/marielakas/react-app/issues"
   },
-  "homepage": "https://github.com/marielakas/react-app#readme"
+  "homepage": "https://github.com/marielakas/react-app#readme",
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "webpack": "4.12.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.0.4"
+  }
 }
