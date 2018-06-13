@@ -1,0 +1,22 @@
+{
+  "name": "react-app",
+  "version": "1.0.0",
+  "description": "React application template",
+  "keywords": [
+    "React", "Redux", "Redux-saga"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marielakas/react-app.git"
+  },
+  "author": "Mariela Kasovska",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marielakas/react-app/issues"
+  },
+  "homepage": "https://github.com/marielakas/react-app#readme"
+}
