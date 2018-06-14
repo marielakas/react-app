@@ -1,23 +1,40 @@
-const path = require('path');
-
-const srcPath = path.join(__dirname, '..', 'src');
-const entryPath =  path.join(srcPath, 'bootstrap.js');
-const outputPath = path.join(__dirname, 'dist');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const paths = require('./paths');
 
 module.exports = {
     mode: 'development',
-    context: srcPath,
+    context: paths.srcPath,
     entry: {
-        app: entryPath,
+        app: paths.entryPath,
         vendor: ['react']
     },
     output: {
         filename: '[name].bundle.js',
-        path: outputPath
+        path: paths.outputPath,
+        publicPath: '/'
     },
     optimization: {
         splitChunks: {
             chunks: 'all'
         }
-    }
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
+            }
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'React App Template',
+            filename: 'index.html',
+            template: paths.templatePath,
+            inject: true
+        })
+    ]
 };
