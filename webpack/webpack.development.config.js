@@ -1,13 +1,14 @@
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const paths = require("./paths");
+const vendors = require("./vendors");
 
 module.exports = {
   mode: "development",
   context: paths.srcPath,
   entry: {
     app: [paths.entryPath, "webpack-hot-middleware/client"],
-    vendor: ["react"]
+    vendor: vendors
   },
   output: {
     filename: "[name].bundle.js",
